@@ -4,7 +4,7 @@ Created on Fri Dec 24 07:50:31 2021
 
 @author: user
 """
-import Places_graph
+import Graph_data
 def find_all_paths(graph, start, destination, path=[]):
         if start not in graph:
             return []
@@ -14,7 +14,7 @@ def find_all_paths(graph, start, destination, path=[]):
         all_paths = []
         for node in graph[start]:
             if node not in path:
-                newpaths = find_all_paths(graph, node, destination, path)
+                newpaths = find_all_paths(Graph_data.Places_graph, node, destination, path)
                 for newpath in newpaths:
                     all_paths.append(newpath)
         return all_paths     
